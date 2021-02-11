@@ -10,7 +10,10 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.2/dist/css/datepicker-bs4.min.css">    <style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.2/dist/css/datepicker-bs4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+
+    <style>
         .my-footer {
             height: 5em;
             background-color: #163b65;
@@ -20,8 +23,8 @@
             font-size: 80%;
         }
 
-        .redText {
-            color: red;
+        .notie-container{
+            box-shadow: none;
         }
     </style>
 </head>
@@ -129,6 +132,8 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.2/dist/js/datepicker-full.min.js"></script>
+<script src="https://unpkg.com/notie"></script>
+
 <script>
     console.log("I am printing from javascript");
 
@@ -151,19 +156,21 @@
     })();
 
     document.getElementById("colorButton").addEventListener("click", function () {
-        let myEl = document.getElementById("myParagraph");
-
-        if (myEl.classList.contains("redText")) {
-            myEl.classList.remove("redText");
-        } else {
-            myEl.classList.add("redText");
-        }
+        notify("This is my message", "warning");
     })
 
     const elem = document.getElementById('reservation-dates');
     const rangePicker = new DateRangePicker(elem, {
         format: "yyyy-mm-dd",
     });
+
+    function notify(msg, msgType) {
+        notie.alert({
+            type: msgType,
+            text: msg,
+        })
+    }
+
 </script>
 
 </body>

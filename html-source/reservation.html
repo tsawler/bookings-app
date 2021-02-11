@@ -10,8 +10,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-    <style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.2/dist/css/datepicker-bs4.min.css">    <style>
         .my-footer {
             height: 5em;
             background-color: #163b65;
@@ -77,16 +76,10 @@
                     <div class="col">
                         <div class="row" id="reservation-dates">
                             <div class="col-md-6">
-                                <label for="start_date">Starting Date</label>
-                                <input required class="form-control" type="date" name="start_date" id="start_date">
-                                <small id="startDateHelp" class="form-text text-muted">Enter your starting date in
-                                    YYYY-MM-DD format</small>
+                                <input required class="form-control" type="text" name="start" placeholder="Arrival">
                             </div>
                             <div class="col-md-6">
-                                <label for="end_date">Ending Date</label>
-                                <input required class="form-control" type="date" name="end_date" id="end_date">
-                                <small id="endDateHelp" class="form-text text-muted">Enter your ending date in
-                                    YYYY-MM-DD format</small>
+                                <input required class="form-control" type="text" name="end" placeholder="Departure">
                             </div>
                         </div>
                     </div>
@@ -135,7 +128,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.2/dist/js/datepicker-full.min.js"></script>
 <script>
     console.log("I am printing from javascript");
 
@@ -166,6 +159,11 @@
             myEl.classList.add("redText");
         }
     })
+
+    const elem = document.getElementById('reservation-dates');
+    const rangePicker = new DateRangePicker(elem, {
+        format: "yyyy-mm-dd",
+    });
 </script>
 
 </body>

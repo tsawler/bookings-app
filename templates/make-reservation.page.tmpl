@@ -11,7 +11,10 @@
 
                     <div class="form-group mt-3">
                         <label for="first_name">First Name:</label>
-                        <input class="form-control"
+                        {{with .Form.Errors.Get "first_name"}}
+                            <label class="text-danger">{{.}}</label>
+                        {{end}}
+                        <input class="form-control {{with .Form.Errors.Get "first_name"}} is-invalid {{end}}"
                                id="first_name" autocomplete="off" type='text'
                                name='first_name' value="" required>
                     </div>

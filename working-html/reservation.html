@@ -12,6 +12,7 @@
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.2/dist/css/datepicker-bs4.min.css">
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
 
     <style>
         .my-footer {
@@ -133,6 +134,7 @@
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.2/dist/js/datepicker-full.min.js"></script>
 <script src="https://unpkg.com/notie"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.js"></script>
 
 <script>
     console.log("I am printing from javascript");
@@ -156,7 +158,8 @@
     })();
 
     document.getElementById("colorButton").addEventListener("click", function () {
-        notify("This is my message", "warning");
+        // notify("This is my message", "warning");
+        notifyModal("title", "<em>hello, world</em>", "success", "My text for the button")
     })
 
     const elem = document.getElementById('reservation-dates');
@@ -168,6 +171,15 @@
         notie.alert({
             type: msgType,
             text: msg,
+        })
+    }
+
+    function notifyModal(title, text ,icon, confirmationButtonText){
+        Swal.fire({
+            title: title,
+            html: text,
+            icon: icon,
+            confirmButtonText: confirmationButtonText
         })
     }
 

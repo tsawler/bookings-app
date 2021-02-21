@@ -23,21 +23,30 @@
 
                     <div class="form-group">
                         <label for="last_name">Last Name:</label>
-                        <input class="form-control"
+                        {{with .Form.Errors.Get "last_name"}}
+                            <label class="text-danger">{{.}}</label>
+                        {{end}}
+                        <input class="form-control {{with .Form.Errors.Get "last_name"}} is-invalid {{end}}"
                                id="last_name" autocomplete="off" type='text'
                                name='last_name' value="{{$res.LastName}}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input class="form-control" id="email"
+                        {{with .Form.Errors.Get "email"}}
+                            <label class="text-danger">{{.}}</label>
+                        {{end}}
+                        <input class="form-control {{with .Form.Errors.Get "email"}} is-invalid {{end}}" id="email"
                                autocomplete="off" type='email'
                                name='email' value="{{$res.Email}}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Phone:</label>
-                        <input class="form-control" id="phone"
+                        {{with .Form.Errors.Get "phone"}}
+                            <label class="text-danger">{{.}}</label>
+                        {{end}}
+                        <input class="form-control {{with .Form.Errors.Get "phone"}} is-invalid {{end}}" id="phone"
                                autocomplete="off" type='email'
                                name='phone' value="{{$res.Phone}}" required>
                     </div>

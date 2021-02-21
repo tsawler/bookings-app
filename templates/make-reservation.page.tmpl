@@ -6,7 +6,8 @@
             <div class="col">
                 <h1 class="mt-3">Make Reservation</h1>
 
-                <form method="post" action="" class="needs-validation" novalidate>
+                <form method="post" action="" class="" novalidate>
+                    <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
 
                     <div class="form-group mt-3">
                         <label for="first_name">First Name:</label>

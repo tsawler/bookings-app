@@ -14,25 +14,31 @@
           href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.2/dist/css/datepicker-bs4.min.css">
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
 
     <style>
-        .my-footer {
-            height: 5em;
-            background-color: #163b65;
-            margin-top: 1.5em;
-            padding: 1em;
-            color: white;
-            font-size: 80%;
+        .btn-outline-secondary {
+            color: aqua;
+            border-color: #6c757d;
         }
 
-        .notie-container {
-            box-shadow: none;
+        p {
+
         }
 
-        .datepicker {
-            z-index: 10000;
+        .paraClass {
+            font-size: 3em;
+        }
+
+        .secondClass {
+            color: red;
+        }
+
+        #lastPara {
+            text-decoration: underline;
         }
     </style>
+
 </head>
 
 <body>
@@ -106,6 +112,9 @@
     <div class="row">
         <div class="col">
             <p id="myParagraph">This is some text.</p>
+            <p class="paraClass secondClass">This is some text.</p>
+            <p class="paraClass">This is some text.</p>
+            <p id="lastPara">This is some text.</p>
             <p>
                 <button id="colorButton" class="btn btn-outline-secondary">Click me</button>
             </p>

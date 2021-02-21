@@ -3,9 +3,9 @@ package handlers
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/tsawler/bookings-app/pkg/config"
-	"github.com/tsawler/bookings-app/pkg/models"
-	"github.com/tsawler/bookings-app/pkg/render"
+	"github.com/tsawler/bookings-app/internal/config"
+	"github.com/tsawler/bookings-app/internal/models"
+	"github.com/tsawler/bookings-app/internal/render"
 	"log"
 	"net/http"
 )

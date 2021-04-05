@@ -1,0 +1,5 @@
+drop_foreign_key("room_restrictions", "room_restrictions_reservation_id_fk", {})
+
+drop_index("reservations", "reservations_email_idx")
+drop_index("reservations", "reservations_last_name_idx")
+github.com/jackc/pgx/v4
